@@ -1,5 +1,5 @@
 <template>
-  <div class="h-[85vh] w-full sm:w-[50%] px-5 sm:px-20 py-10">
+  <div class="h-[85vh] w-full sm:w-[50%] px-5 sm:px-20 py-10" v-if="!lensActive">
     <div class="flex flex-row justify-between w-full h-auto py-2 text-base font-sans">
       <div class="text-[#A9A9A9]">SAMSUNG</div>
       <div class="text-[#398B61]">Hurry Limited Stock</div>
@@ -47,10 +47,52 @@
       </button>
     </div>
   </div>
+  <div class="h-[85vh] w-full sm:w-[50%] px-5 sm:px-20 py-10 flex justify-center relative" id="zoomedImg" v-else>
+    <div class=" w-[80%] h-[80%] overflow-hidden relative">
+      <img :src="imageList[activeImage]" id="zoom" ref="zoom" class="absolute max-w-[200%] h-[200%] "
+        :style="{ 'left': localLeft, 'top': localTop }">
+    </div>
+  </div>
 </template>
 
 <script>
-export default {};
+import zoomed1 from "../assets/product-image-large.jpeg";
+import zoomed2 from "../assets/product-image-back-large.jpeg";
+import zoomed3 from "../assets/product-image-front-large.jpeg";
+// import { watch } from 'vue';
+
+export default {
+  props: [
+    'backgroundPosition',
+    'lensActive',
+    'activeImage',
+    'top',
+    'left'
+  ],
+  data() {
+    return {
+      imageList: [zoomed1, zoomed2, zoomed3],
+      localLeft: '0px',
+      localTop: '0px'
+    }
+  },
+  mounted() {
+    this.localLeft = this.left
+    this.localTop = this.top
+  },
+  watch: {
+    left: function (newVal) {
+      console.log(`watch left ${newVal}`)
+      this.localLeft = `${(newVal / 3.2) + 540}px`
+      console.log(this.localLeft)
+    },
+    top: function (newVal) {
+      // console.log(`watch top ${newVal}`)
+      this.localTop = `${(newVal / 1.5) + 310}px`
+    },
+  }
+
+};
 </script>
 
 <style scoped>
