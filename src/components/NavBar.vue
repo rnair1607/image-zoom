@@ -1,9 +1,7 @@
 <template>
-  <nav
-    class="relative flex w-full flex-wrap items-center justify-between py-2 border-b-2 h-[15vh]"
-  >
+  <nav class="relative flex w-full flex-wrap items-center justify-between py-2 border-b-2 h-[15vh]">
     <div class="flex w-full flex-wrap items-center justify-between px-3">
-      <div class="ml-[10vw] logo">
+      <div class="ml-[2vw] sm:ml-[10vw] logo">
         <a href="">
           <img :src="logo" class="w-[60%]" />
         </a>

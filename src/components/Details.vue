@@ -59,7 +59,6 @@
 import zoomed1 from "../assets/product-image-large.jpeg";
 import zoomed2 from "../assets/product-image-back-large.jpeg";
 import zoomed3 from "../assets/product-image-front-large.jpeg";
-// import { watch } from 'vue';
 
 export default {
   props: [
@@ -82,12 +81,11 @@ export default {
   },
   watch: {
     left: function (newVal) {
-      console.log(`watch left ${newVal}`)
-      this.localLeft = `${(newVal / 3.2) + 540}px`
-      console.log(this.localLeft)
+      // console.log(`watch left ${newVal}`)
+      this.localLeft = `${(newVal / 3.2) + 500}px`
+      // console.log(this.localLeft)
     },
     top: function (newVal) {
-      // console.log(`watch top ${newVal}`)
       this.localTop = `${(newVal / 1.5) + 310}px`
     },
   }
