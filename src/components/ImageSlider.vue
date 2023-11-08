@@ -18,7 +18,7 @@
                     </svg>
                 </div>
             </div>
-            <div class="flex flex-row justify-around items-center w-[60%] h-[10%]">
+            <div class="flex flex-row justify-around items-center w-[75%] h-[20%] sm:w-[60%] sm:h-[10%]">
                 <div v-for="(item, index) in thumbnailList" :key="item">
                     <img :src="thumbnailList[index]" class="object-scale-down " :id="item" height="50" width="50"
                         :class="index === activeImage ? 'border-2 border-[#E53E3E]' : 'border border-gray-400'"

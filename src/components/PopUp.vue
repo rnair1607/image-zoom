@@ -9,7 +9,7 @@
                     :class="imageActive ? 'border-b-[#E53E3E] border-b-2 text-[#234B51]' : 'text-[#727C7D]'"
                     @click="toggle('image')">IMAGES</div>
             </div>
-            <div class=" flex justify-end items-start flex-row h-full w-[10%] sm:w-[5%]  pt-1 pl-5" @click="togglePopup">
+            <div class=" flex justify-end items-start flex-row h-full w-[10%] sm:w-[5%]  pt-1 sm:pl-5" @click="togglePopup">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                     class="w-6 h-6 cursor-pointer">
                     <path fill-rule="evenodd"
