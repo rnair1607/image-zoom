@@ -81,9 +81,7 @@ export default {
   },
   watch: {
     left: function (newVal) {
-      // console.log(`watch left ${newVal}`)
       this.localLeft = `${(newVal / 3.2) + 500}px`
-      // console.log(this.localLeft)
     },
     top: function (newVal) {
       this.localTop = `${(newVal / 1.5) + 310}px`

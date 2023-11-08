@@ -17,7 +17,7 @@ import PopUp from './components/PopUp.vue';
 export default {
   components: { NavBar, MainPage, PopUp },
   data() {
-    return { popup: true }
+    return { popup: false }
   },
   methods: {
     togglePopup() {
